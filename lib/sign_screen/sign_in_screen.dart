@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:new_app/constants/colors.dart';
+import 'package:new_app/global_widgets/custom_underline_word.dart';
+import 'package:new_app/global_widgets/text_form.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -6,7 +9,7 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 214, 228, 254),
+      backgroundColor: AppColors.hawkesBlue,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -68,50 +71,14 @@ class SignIn extends StatelessWidget {
             child: Column(
               children: [
                 //Name
-                TextFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    hintText: "Name",
-                    hintStyle: const TextStyle(color: Colors.black),
-                    contentPadding: const EdgeInsets.only(left: 25),
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
-                ),
+                TextFormWidget(name: 'Name'),
                 //Your Email
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 15),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      hintText: "Your Email",
-                      hintStyle: const TextStyle(color: Colors.black),
-                      contentPadding: const EdgeInsets.only(left: 25),
-                      fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+                  child: TextFormWidget(name: "Your Email"),
                 ),
                 //Password
-                TextFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    hintText: "Password",
-                    hintStyle: const TextStyle(color: Colors.black),
-                    contentPadding: const EdgeInsets.only(left: 25),
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
-                ),
+                TextFormWidget(name: "Password"),
               ],
             ),
           ),
@@ -164,15 +131,10 @@ class SignIn extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Sign In",
-                              style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: Colors.blueAccent,
-                                  decorationThickness: 10),
-                            ),
+                          CustomUnderlineWord(
+                            text: 'Sign In',
+                            color: AppColors.cornflowerBlue,
+                            function: () {},
                           ),
                         ],
                       ),
