@@ -15,17 +15,10 @@ class SignUpSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * .3,
+      height: MediaQuery.of(context).size.height * .2,
       child: Stack(
         children: [
           //Circle Avatar
-          const Positioned(
-            right: -150,
-            bottom: -130,
-            child: CircleAvatar(
-                backgroundColor: Color.fromARGB(255, 175, 202, 254),
-                maxRadius: 160),
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
             child: Column(
@@ -36,7 +29,7 @@ class SignUpSectionWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Sign Up',
+                      'Sign In',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -46,15 +39,17 @@ class SignUpSectionWidget extends StatelessWidget {
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CustomUnderlineWord(
-                      text: 'Sign In',
+                      text: 'Sign Up',
                       color: AppColors.brightCornflowerBlue,
-                      function: () {
-                        print(name);
-                        print('sign_up_form');
-                      },
+                      function: () {},
+                    ),
+                    CustomUnderlineWord(
+                      text: 'Forgot Passwords',
+                      color: AppColors.brightCornflowerBlue,
+                      function: () {},
                     ),
                   ],
                 ),
