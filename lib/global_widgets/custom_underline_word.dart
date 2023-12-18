@@ -12,7 +12,7 @@ class CustomUnderlineWord extends StatelessWidget {
 
   final String text;
   final Color color;
-  final Function function;
+  final Function() function;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class CustomUnderlineWord extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () => function,
+          onPressed: function,
           child: Text(
             text,
             style: const TextStyle(

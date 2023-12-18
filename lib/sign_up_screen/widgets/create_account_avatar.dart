@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CreateAccountText extends StatelessWidget {
-  const CreateAccountText({Key? key}) : super(key: key);
+class CreateAccountAvatar extends StatelessWidget {
+  const CreateAccountAvatar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
