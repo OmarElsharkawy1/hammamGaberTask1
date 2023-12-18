@@ -10,7 +10,7 @@ class SignUpForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => SignUpController(),
+      create: (context) => SignUpController(),
       child: Consumer<SignUpController>(builder: (_, model, __) {
         return Column(
           children: [
@@ -46,11 +46,7 @@ class SignUpForm extends StatelessWidget {
                 ],
               ),
             ),
-            SignUpSectionWidget(
-              name: model.name,
-              email: model.email,
-              password: model.password,
-            ),
+            const SignUpSectionWidget(),
           ],
         );
       }),

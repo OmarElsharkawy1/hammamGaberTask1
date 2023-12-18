@@ -66,7 +66,9 @@ class WelcomeBackAvatar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 25, left: 25),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,

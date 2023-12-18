@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:new_app/constants/colors.dart';
 import 'package:new_app/global_widgets/custom_underline_word.dart';
-import 'package:new_app/sign_up_screen/widgets/sign_up_arrow.dart';
+import 'package:new_app/global_widgets/arrow_icon.dart';
 
 class SignUpSectionWidget extends StatelessWidget {
-  const SignUpSectionWidget({Key? key, this.name, this.email, this.password})
-      : super(key: key);
-
-  final String? name;
-  final String? email;
-  final String? password;
+  const SignUpSectionWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * .2,
+      height: MediaQuery.of(context).size.height * .3,
       child: Stack(
         children: [
           //Circle Avatar
+          const Positioned(
+            right: -140,
+            bottom: -130,
+            child: CircleAvatar(
+              backgroundColor: AppColors.tropicalBlue,
+              maxRadius: 150,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
             child: Column(
@@ -29,7 +32,7 @@ class SignUpSectionWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Sign In',
+                      'Sign Up',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -39,17 +42,14 @@ class SignUpSectionWidget extends StatelessWidget {
                   ],
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     CustomUnderlineWord(
-                      text: 'Sign Up',
+                      text: 'Sign In',
                       color: AppColors.brightCornflowerBlue,
-                      function: () {},
-                    ),
-                    CustomUnderlineWord(
-                      text: 'Forgot Passwords',
-                      color: AppColors.brightCornflowerBlue,
-                      function: () {},
+                      function: () {
+                        Navigator.pushNamed(context, '/sign-in');
+                      },
                     ),
                   ],
                 ),
