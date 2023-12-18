@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:new_app/constants/colors.dart';
 import 'package:new_app/global_widgets/custom_underline_word.dart';
 import 'package:new_app/global_widgets/text_form_widget.dart';
-import 'package:new_app/sign_up_screen/sign_up_controller.dart';
+import 'package:new_app/sign_in_screen/sign_in_controller.dart';
 import 'package:new_app/global_widgets/arrow_icon.dart';
 import 'package:provider/provider.dart';
 
@@ -12,8 +12,8 @@ class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => SignUpController(),
-      child: Consumer<SignUpController>(builder: (_, model, __) {
+      create: (_) => SignInController(),
+      child: Consumer<SignInController>(builder: (_, model, __) {
         return SizedBox(
           height: MediaQuery.of(context).size.height * .6,
           child: Padding(
@@ -39,15 +39,19 @@ class SignInForm extends StatelessWidget {
                     },
                   ),
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Sign In',
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
-                    SignUpArrow(),
+                    SignUpArrow(
+                      screenName: 'in',
+                      email: model.email,
+                      password: model.password,
+                    ),
                   ],
                 ),
                 const Spacer(),
